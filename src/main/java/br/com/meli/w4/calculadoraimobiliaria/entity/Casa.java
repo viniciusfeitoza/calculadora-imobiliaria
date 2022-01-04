@@ -12,8 +12,8 @@ import java.util.List;
 @NoArgsConstructor
 @Data
 @Builder
-public class Casa {
+public class Casa extends Comodo{
     private String nome;
     private String endereco;
-    private List<Comodo> listaDeComodos;
+    private List<Comodo> listaComodos;
 }

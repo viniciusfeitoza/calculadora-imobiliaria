@@ -17,14 +17,42 @@ http://localhost:8080/areaComodos/nomeDaCasa
 
 package br.com.meli.w4.calculadoraimobiliaria.controller;
 
+import br.com.meli.w4.calculadoraimobiliaria.entity.Casa;
+import br.com.meli.w4.calculadoraimobiliaria.entity.Comodo;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Arrays;
+import java.util.List;
+
+
 @RestController
 public class MyController {
+
     @GetMapping("/ping")
     public String meuMetodo(){
         return "pong";
     }
-}
 
+    private static List<Comodo> comodos1=
+            Arrays.asList(Comodo.builder()
+                    .nome("Sala")
+                    .largura(5)
+                    .comprimento(3)
+                    .build(),
+                    Comodo.builder()
+                    .nome("Quarto")
+                    .largura(5)
+                    .comprimento(3)
+                    .build()
+
+            );
+
+    private static List<Casa> casas =
+            Arrays.asList(Casa.builder()
+                    .nome("Vinicius")
+                    .endereco("Rua Amarais 101")
+                    .listaComodos(comodos1)
+                    .build()
+            );
+}
